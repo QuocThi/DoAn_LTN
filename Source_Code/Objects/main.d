@@ -1,5 +1,5 @@
 .\objects\main.o: main.c
-.\objects\main.o: uart_ESP8266.h
+.\objects\main.o: NUC_config.h
 .\objects\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 .\objects\main.o: ..\Nuvoton\NUC140BSP\CMSIS\CM0\DeviceSupport\Nuvoton\NUC1xx\NUC1xx.h
 .\objects\main.o: ..\Nuvoton\NUC140BSP\CMSIS\CM0\CoreSupport\core_cm0.h

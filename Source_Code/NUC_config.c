@@ -1,43 +1,57 @@
-#include "uart_ESP8266.h"
+#include "NUC_config.h"
 
-char TEXT1[16] = "TX: sending...  ";
-char TEXT2[16] = "RX:             ";
-
-volatile uint8_t comRbuf[16] = "";
-volatile uint16_t comRbytes = 0;
-volatile uint16_t comRhead 	= 0;
-volatile uint16_t comRtail 	= 0;
+volatile uint8_t Receive_buf[16] = "";
+volatile uint16_t readCount = 0;
+volatile vibration_handler_t vibra = NULL;
 
 /*---------------------------------------------------------------------------------------------------------*/
 /* UART Callback function                                                                           	   */
 /*---------------------------------------------------------------------------------------------------------*/
-void UART_INT_HANDLE(void)
+void UART_INT_HANDLE(uint32_t userData)
 {
-	uint8_t i;
+	//uint8_t i;
 	uint8_t bInChar[1] = {0xFF};
 
 	while(UART0->ISR.RDA_IF==1) 
 	{
 		DrvUART_Read(UART_PORT0,bInChar,1);	
-		if(comRbytes < 8) // check if Buffer is full
+		if(readCount < 8) // check if Buffer is full
 		{
-			comRbuf[comRbytes] = bInChar[0];
-			comRbytes++;
+			Receive_buf[readCount] = bInChar[0];
+			readCount++;
 		}
-		else if (comRbytes==8)
+		else if (readCount==8)
 		{
-			comRbytes=0;
-			sprintf(TEXT2+4,"%s",comRbuf);
+			readCount=0;
+			//sprintf(TEXT2+4,"%s",Receive_buf);
 		}			
 	}
+	
+	if(Receive_buf[0] == VIBRATION)
+	{
+		vibra();
+	}
+	
 }
 
-void UART_config()
+void VIBRATION_config()
+{
+	
+}
+
+void ESP_config()
 {	
 	STR_UART_T sParam;
 	DrvGPIO_InitFunction(E_FUNC_UART0);
 /* UART Setting */
+#ifdef  BAUD9600
     sParam.u32BaudRate 		= 9600;
+#endif
+	
+#ifdef  BAUD115
+    sParam.u32BaudRate 		= 115200;
+#endif
+	
     sParam.u8cDataBits 		= DRVUART_DATABITS_8;
     sParam.u8cStopBits 		= DRVUART_STOPBITS_1;
     sParam.u8cParity 		= DRVUART_PARITY_NONE;
@@ -46,6 +60,15 @@ void UART_config()
 	/* Set UART Configuration */
  	if(DrvUART_Open(UART_PORT0,&sParam) != E_SUCCESS);  
 
-	DrvUART_EnableInt(UART_PORT0, DRVUART_RDAINT, UART_INT_HANDLE);  	
+	DrvUART_EnableInt(UART_PORT0, DRVUART_RDAINT,UART_INT_HANDLE);  	
+}
+
+void ESP_send_key(uint8_t Keys)
+{
+	DrvUART_Write(UART_PORT0,&Keys,1);
+}
+void ESP_set_vibration_handler(vibration_handler_t handler)
+{
+	vibra = handler;
 }
 
