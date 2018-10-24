@@ -442,9 +442,14 @@
               <FilePath>.\main.c</FilePath>
             </File>
             <File>
-              <FileName>uart_ESP8266.c</FileName>
+              <FileName>NUC_config.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\uart_ESP8266.c</FilePath>
+              <FilePath>.\NUC_config.c</FilePath>
+            </File>
+            <File>
+              <FileName>NUC_config.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\NUC_config.h</FilePath>
             </File>
           </Files>
         </Group>
