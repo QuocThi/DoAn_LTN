@@ -19,13 +19,22 @@ typedef void (*vibration_handler_t) (void);
 #define KEY_LEFT		0x04
 #define KEY_RIGHT		0x08
 #define KEY_CANCEL	0x10
-#define KEY_HIT			0x20
+#define KEY_OK			0x20
 #define VIBRATION		0x40
 
 void ESP_config();
-void VIBRATION_config();
+//void VIBRATION_config();
 void ESP_send_key(uint8_t Keys);
 void ESP_set_vibration_handler(vibration_handler_t handler);
+void NUC_button_config();
+/*
+void NUC_press_up();
+void NUC_press_down();
+void NUC_press_right();
+void NUC_press_left();
+void NUC_press_OK();
+void NUC_press_cancel();
+*/
 
 #endif /* __NUC_CONFIG_H__ */
 
