@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Objects\NUC140_Code.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\NUC140_Code.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060061: Last Updated: Tue Oct 23 02:46:32 2018
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060061: Last Updated: Wed Oct 24 16:03:00 2018
 <BR><P>
 <H3>Maximum Stack Usage =         88 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -58,15 +58,15 @@ Function Pointers
  <LI><a href="#[8]">SVC_Handler</a> from startup_nuc1xx.o(.text) referenced from startup_nuc1xx.o(RESET)
  <LI><a href="#[a]">SysTick_Handler</a> from startup_nuc1xx.o(.text) referenced from startup_nuc1xx.o(RESET)
  <LI><a href="#[29]">SystemInit</a> from system_nuc1xx.o(i.SystemInit) referenced from startup_nuc1xx.o(.text)
- <LI><a href="#[13]">TMR0_IRQHandler</a> from drvtimer.o(i.TMR0_IRQHandler) referenced from startup_nuc1xx.o(RESET)
- <LI><a href="#[14]">TMR1_IRQHandler</a> from drvtimer.o(i.TMR1_IRQHandler) referenced from startup_nuc1xx.o(RESET)
- <LI><a href="#[15]">TMR2_IRQHandler</a> from drvtimer.o(i.TMR2_IRQHandler) referenced from startup_nuc1xx.o(RESET)
- <LI><a href="#[16]">TMR3_IRQHandler</a> from drvtimer.o(i.TMR3_IRQHandler) referenced from startup_nuc1xx.o(RESET)
+ <LI><a href="#[13]">TMR0_IRQHandler</a> from startup_nuc1xx.o(.text) referenced from startup_nuc1xx.o(RESET)
+ <LI><a href="#[14]">TMR1_IRQHandler</a> from startup_nuc1xx.o(.text) referenced from startup_nuc1xx.o(RESET)
+ <LI><a href="#[15]">TMR2_IRQHandler</a> from startup_nuc1xx.o(.text) referenced from startup_nuc1xx.o(RESET)
+ <LI><a href="#[16]">TMR3_IRQHandler</a> from startup_nuc1xx.o(.text) referenced from startup_nuc1xx.o(RESET)
  <LI><a href="#[17]">UART02_IRQHandler</a> from drvuart.o(i.UART02_IRQHandler) referenced from startup_nuc1xx.o(RESET)
  <LI><a href="#[18]">UART1_IRQHandler</a> from drvuart.o(i.UART1_IRQHandler) referenced from startup_nuc1xx.o(RESET)
  <LI><a href="#[2b]">UART_INT_HANDLE</a> from nuc_config.o(i.UART_INT_HANDLE) referenced from nuc_config.o(i.ESP_config)
  <LI><a href="#[21]">USBD_IRQHandler</a> from startup_nuc1xx.o(.text) referenced from startup_nuc1xx.o(RESET)
- <LI><a href="#[c]">WDT_IRQHandler</a> from drvtimer.o(i.WDT_IRQHandler) referenced from startup_nuc1xx.o(RESET)
+ <LI><a href="#[c]">WDT_IRQHandler</a> from startup_nuc1xx.o(.text) referenced from startup_nuc1xx.o(RESET)
  <LI><a href="#[2e]">__main</a> from __main.o(!!!main) referenced from startup_nuc1xx.o(.text)
  <LI><a href="#[2c]">vibration</a> from main.o(i.vibration) referenced from main.o(i.main)
 </UL>
@@ -289,7 +289,22 @@ Global Symbols
 <P><STRONG><a name="[1c]"></a>SPI3_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, startup_nuc1xx.o(.text))
 <BR>[Address Reference Count : 1]<UL><LI> startup_nuc1xx.o(RESET)
 </UL>
+<P><STRONG><a name="[13]"></a>TMR0_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, startup_nuc1xx.o(.text))
+<BR>[Address Reference Count : 1]<UL><LI> startup_nuc1xx.o(RESET)
+</UL>
+<P><STRONG><a name="[14]"></a>TMR1_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, startup_nuc1xx.o(.text))
+<BR>[Address Reference Count : 1]<UL><LI> startup_nuc1xx.o(RESET)
+</UL>
+<P><STRONG><a name="[15]"></a>TMR2_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, startup_nuc1xx.o(.text))
+<BR>[Address Reference Count : 1]<UL><LI> startup_nuc1xx.o(RESET)
+</UL>
+<P><STRONG><a name="[16]"></a>TMR3_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, startup_nuc1xx.o(.text))
+<BR>[Address Reference Count : 1]<UL><LI> startup_nuc1xx.o(RESET)
+</UL>
 <P><STRONG><a name="[21]"></a>USBD_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, startup_nuc1xx.o(.text))
+<BR>[Address Reference Count : 1]<UL><LI> startup_nuc1xx.o(RESET)
+</UL>
+<P><STRONG><a name="[c]"></a>WDT_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, startup_nuc1xx.o(.text))
 <BR>[Address Reference Count : 1]<UL><LI> startup_nuc1xx.o(RESET)
 </UL>
 <P><STRONG><a name="[2f]"></a>__user_initial_stackheap</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, startup_nuc1xx.o(.text))
@@ -442,26 +457,6 @@ Global Symbols
 <P><STRONG><a name="[29]"></a>SystemInit</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, system_nuc1xx.o(i.SystemInit))
 <BR>[Address Reference Count : 1]<UL><LI> startup_nuc1xx.o(.text)
 </UL>
-<P><STRONG><a name="[13]"></a>TMR0_IRQHandler</STRONG> (Thumb, 144 bytes, Stack size 8 bytes, drvtimer.o(i.TMR0_IRQHandler))
-<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = TMR0_IRQHandler
-</UL>
-<BR>[Address Reference Count : 1]<UL><LI> startup_nuc1xx.o(RESET)
-</UL>
-<P><STRONG><a name="[14]"></a>TMR1_IRQHandler</STRONG> (Thumb, 144 bytes, Stack size 8 bytes, drvtimer.o(i.TMR1_IRQHandler))
-<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = TMR1_IRQHandler
-</UL>
-<BR>[Address Reference Count : 1]<UL><LI> startup_nuc1xx.o(RESET)
-</UL>
-<P><STRONG><a name="[15]"></a>TMR2_IRQHandler</STRONG> (Thumb, 144 bytes, Stack size 8 bytes, drvtimer.o(i.TMR2_IRQHandler))
-<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = TMR2_IRQHandler
-</UL>
-<BR>[Address Reference Count : 1]<UL><LI> startup_nuc1xx.o(RESET)
-</UL>
-<P><STRONG><a name="[16]"></a>TMR3_IRQHandler</STRONG> (Thumb, 144 bytes, Stack size 8 bytes, drvtimer.o(i.TMR3_IRQHandler))
-<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = TMR3_IRQHandler
-</UL>
-<BR>[Address Reference Count : 1]<UL><LI> startup_nuc1xx.o(RESET)
-</UL>
 <P><STRONG><a name="[17]"></a>UART02_IRQHandler</STRONG> (Thumb, 44 bytes, Stack size 16 bytes, drvuart.o(i.UART02_IRQHandler))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = UART02_IRQHandler
 </UL>
@@ -478,11 +473,6 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DrvUART_Read
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> nuc_config.o(i.ESP_config)
-</UL>
-<P><STRONG><a name="[c]"></a>WDT_IRQHandler</STRONG> (Thumb, 44 bytes, Stack size 8 bytes, drvtimer.o(i.WDT_IRQHandler))
-<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = WDT_IRQHandler
-</UL>
-<BR>[Address Reference Count : 1]<UL><LI> startup_nuc1xx.o(RESET)
 </UL>
 <P><STRONG><a name="[45]"></a>__ARM_common_switch8</STRONG> (Thumb, 28 bytes, Stack size 8 bytes, drvgpio.o(i.__ARM_common_switch8))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = __ARM_common_switch8
