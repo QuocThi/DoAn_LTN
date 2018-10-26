@@ -22,34 +22,39 @@ Dialog DLL:      TARMCM1.DLL V1.9.0.0
  
 <h2>Project:</h2>
 E:\Online_Project\Lap Trinh Nhung Can Ban\Code_Resposity\DoAn_LTN\Source_Code\NUC140_Code.uvprojx
-Project File Date:  10/24/2018
+Project File Date:  10/26/2018
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 1 (build 61)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Rebuild target 'Target 1'
 assembling startup_NUC1xx.s...
-compiling system_NUC1xx.c...
 compiling core_cm0.c...
+compiling system_NUC1xx.c...
 compiling main.c...
 NUC_config.h(25): warning:  #1295-D: Deprecated declaration ESP_config - give arg types
   void ESP_config();
 NUC_config.h(29): warning:  #1295-D: Deprecated declaration NUC_button_config - give arg types
   void NUC_button_config();
-main.c(46): warning:  #111-D: statement is unreachable
+NUC_config.h(30): warning:  #1295-D: Deprecated declaration set_debounce_button - give arg types
+  void set_debounce_button();
+main.c(53): warning:  #111-D: statement is unreachable
   	return 0;
-main.c: 3 warnings, 0 errors
+main.c: 4 warnings, 0 errors
 compiling NUC_config.c...
 NUC_config.h(25): warning:  #1295-D: Deprecated declaration ESP_config - give arg types
   void ESP_config();
 NUC_config.h(29): warning:  #1295-D: Deprecated declaration NUC_button_config - give arg types
   void NUC_button_config();
-NUC_config.c: 2 warnings, 0 errors
+NUC_config.h(30): warning:  #1295-D: Deprecated declaration set_debounce_button - give arg types
+  void set_debounce_button();
+NUC_config.c: 3 warnings, 0 errors
 compiling DrvGPIO.c...
 compiling DrvUART.c...
 compiling DrvSYS.c...
 linking...
-Program Size: Code=5156 RO-data=240 RW-data=72 ZI-data=1136  
-".\Objects\NUC140_Code.axf" - 0 Error(s), 5 Warning(s).
+Program Size: Code=5312 RO-data=240 RW-data=72 ZI-data=1136  
+FromELF: creating hex file...
+".\Objects\NUC140_Code.axf" - 0 Error(s), 7 Warning(s).
 
 <h2>Collection of Component include folders:</h2>
   E:\Online_Project\Lap Trinh Nhung Can Ban\Code_Resposity\DoAn_LTN\Source_Code\RTE

@@ -73,34 +73,22 @@ void NUC_button_config()
 	DrvGPIO_Open(E_GPC,1,E_IO_INPUT);
 	DrvGPIO_Open(E_GPC,2,E_IO_INPUT);
 	DrvGPIO_Open(E_GPC,3,E_IO_INPUT);
-	DrvGPIO_Open(E_GPC,7,E_IO_INPUT);
+	DrvGPIO_Open(E_GPD,7,E_IO_INPUT);
 	DrvGPIO_Open(E_GPA,12,E_IO_INPUT);
 	DrvGPIO_Open(E_GPA,13,E_IO_INPUT);
 }
 
-//void NUC_press_up()
-//{
-//	ESP_send_key(KEY_UP);
-//}
-//void NUC_press_down()
-//{
-//	ESP_send_key(KEY_DOWN);
-//}
-//void NUC_press_right()
-//{
-//	ESP_send_key(KEY_RIGHT);
-//}
-//void NUC_press_left()
-//{
-//	ESP_send_key(KEY_LEFT);
-//}
-//void NUC_press_OK()
-//{
-//	ESP_send_key(KEY_OK);
-//}
-//void NUC_press_cancel()
-//{
-//	ESP_send_key(KEY_CANCEL);
-//}
+void set_debounce_button()
+{
+	DrvGPIO_EnableDebounce(E_GPC,0);
+	DrvGPIO_EnableDebounce(E_GPC,1);
+	DrvGPIO_EnableDebounce(E_GPC,2);
+	DrvGPIO_EnableDebounce(E_GPC,3);
+	DrvGPIO_EnableDebounce(E_GPD,7);
+	DrvGPIO_EnableDebounce(E_GPC,12);
+	DrvGPIO_EnableDebounce(E_GPC,13);
+	
+}
+
 
 

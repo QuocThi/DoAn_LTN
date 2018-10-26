@@ -14,19 +14,20 @@
 
 typedef void (*vibration_handler_t) (void); 
 
-#define KEY_UP			0x01
-#define KEY_DOWN		0x02
-#define KEY_LEFT		0x04
-#define KEY_RIGHT		0x08
-#define KEY_CANCEL	0x10
-#define KEY_OK			0x20
-#define VIBRATION		0x40
+#define KEY_UP			'A'//0x01
+#define KEY_DOWN		'B'//0x02
+#define KEY_LEFT		'C'//0x04
+#define KEY_RIGHT		'D'//0x08
+#define KEY_CANCEL	'E'//0x10
+#define KEY_OK			'F'//0x20
+#define VIBRATION		'G'//0x40
 
 void ESP_config();
 //void VIBRATION_config();
 void ESP_send_key(uint8_t Keys);
 void ESP_set_vibration_handler(vibration_handler_t handler);
 void NUC_button_config();
+void set_debounce_button();
 /*
 void NUC_press_up();
 void NUC_press_down();

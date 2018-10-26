@@ -14,32 +14,39 @@ int main()
 	ESP_config();
 	ESP_set_vibration_handler(vibration);
 	NUC_button_config();
+	set_debounce_button();
 	while(1)
 	{
 		//Button press handler
-		if(DrvGPIO_GetBit(E_GPC,1))
+		if(!DrvGPIO_GetBit(E_GPC,1))
 		{
 			ESP_send_key(KEY_DOWN);
+			DrvSYS_Delay(100000);
 		}
-		if(DrvGPIO_GetBit(E_GPC,2))
+		if(!DrvGPIO_GetBit(E_GPC,2))
 		{
 			ESP_send_key(KEY_RIGHT);
+				DrvSYS_Delay(100000);
 		}
-		if(DrvGPIO_GetBit(E_GPC,3))
+		if(!DrvGPIO_GetBit(E_GPC,3))
 		{
 			ESP_send_key(KEY_LEFT);
+				DrvSYS_Delay(100000);
 		}
-		if(DrvGPIO_GetBit(E_GPC,7))
+		if(!DrvGPIO_GetBit(E_GPD,7))
 		{
 			ESP_send_key(KEY_UP);
+				DrvSYS_Delay(100000);
 		}
-		if(DrvGPIO_GetBit(E_GPA,12))
+		if(!DrvGPIO_GetBit(E_GPA,12))
 		{
 			ESP_send_key(KEY_OK);
+				DrvSYS_Delay(100000);
 		}
-		if(DrvGPIO_GetBit(E_GPA,13))
+		if(!DrvGPIO_GetBit(E_GPA,13))
 		{
 			ESP_send_key(KEY_CANCEL);
+				DrvSYS_Delay(100000);
 		}
 	}
 	
