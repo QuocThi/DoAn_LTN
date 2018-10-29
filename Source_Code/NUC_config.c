@@ -23,7 +23,6 @@ void UART_INT_HANDLE(uint32_t userData)
 		else if (readCount==8)
 		{
 			readCount=0;
-			//sprintf(TEXT2+4,"%s",Receive_buf);
 		}			
 	}
 	

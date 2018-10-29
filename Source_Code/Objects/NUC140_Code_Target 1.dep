@@ -10,7 +10,7 @@ I (..\Nuvoton\NUC140BSP\NuvotonPlatform_Keil\Include\System\SysInfra.h)(0x5BCE91
 I (..\Nuvoton\NUC140BSP\NuvotonPlatform_Keil\Include\System\ModuleID.h)(0x5BCE9162)
 F (..\Nuvoton\NUC140BSP\CMSIS\CM0\DeviceSupport\Nuvoton\NUC1xx\startup\arm\startup_NUC1xx.s)(0x5BCE9161)(--cpu Cortex-M0 --pd "__EVAL SETA 1" -g --apcs=interwork -I "E:\Online_Project\Lap Trinh Nhung Can Ban\Code_Resposity\DoAn_LTN\Source_Code\RTE"-I C:\Keil_v5\ARM\PACK\Nuvoton\NuMicro_DFP\1.3.2\Device\NUC100\Include-I C:\Keil_v5\ARM\CMSIS\Include--pd "__UVISION_VERSION SETA 517"--list .\listings\startup_nuc1xx.lst --xref -o .\objects\startup_nuc1xx.o --depend .\objects\startup_nuc1xx.d)
 F (.\main.c)(0x5BD38C13)(-c --cpu Cortex-M0 -D__EVAL -g -O0 --apcs=interwork --split_sections -I..\Nuvoton\NUC140BSP\CMSIS\CM0\CoreSupport -I..\Nuvoton\NUC140BSP\CMSIS\CM0\DeviceSupport\Nuvoton\NUC1xx -I..\Nuvoton\NUC140BSP\NuvotonPlatform_Keil\Include -I..\Nuvoton\NUC140BSP\NuvotonPlatform_Keil\Include\Driver -I..\Nuvoton\NUC140BSP\NuvotonPlatform_Keil\Include\NUC1xx-LB_002 -I.\ -I..\Source_Code-I "E:\Online_Project\Lap Trinh Nhung Can Ban\Code_Resposity\DoAn_LTN\Source_Code\RTE"-I C:\Keil_v5\ARM\PACK\Nuvoton\NuMicro_DFP\1.3.2\Device\NUC100\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="517" -DUSE_STDPERIPH_DRIVER-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
-I (NUC_config.h)(0x5BD38BAA)
+I (NUC_config.h)(0x5BD38D45)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x55DB3986)
 I (..\Nuvoton\NUC140BSP\CMSIS\CM0\DeviceSupport\Nuvoton\NUC1xx\NUC1xx.h)(0x4F61A4A4)
 I (..\Nuvoton\NUC140BSP\CMSIS\CM0\CoreSupport\core_cm0.h)(0x51061B80)
@@ -21,8 +21,8 @@ I (..\Nuvoton\NUC140BSP\NuvotonPlatform_Keil\Include\System\ModuleID.h)(0x5BCE91
 I (..\Nuvoton\NUC140BSP\NuvotonPlatform_Keil\Include\Driver\DrvUART.h)(0x5BCE9162)
 I (..\Nuvoton\NUC140BSP\NuvotonPlatform_Keil\Include\Driver\DrvGPIO.h)(0x5BCE9162)
 I (..\Nuvoton\NUC140BSP\NuvotonPlatform_Keil\Include\Driver\DrvSYS.h)(0x5BCE9162)
-F (.\NUC_config.c)(0x5BD38C13)(-c --cpu Cortex-M0 -D__EVAL -g -O0 --apcs=interwork --split_sections -I..\Nuvoton\NUC140BSP\CMSIS\CM0\CoreSupport -I..\Nuvoton\NUC140BSP\CMSIS\CM0\DeviceSupport\Nuvoton\NUC1xx -I..\Nuvoton\NUC140BSP\NuvotonPlatform_Keil\Include -I..\Nuvoton\NUC140BSP\NuvotonPlatform_Keil\Include\Driver -I..\Nuvoton\NUC140BSP\NuvotonPlatform_Keil\Include\NUC1xx-LB_002 -I.\ -I..\Source_Code-I "E:\Online_Project\Lap Trinh Nhung Can Ban\Code_Resposity\DoAn_LTN\Source_Code\RTE"-I C:\Keil_v5\ARM\PACK\Nuvoton\NuMicro_DFP\1.3.2\Device\NUC100\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="517" -DUSE_STDPERIPH_DRIVER-o .\objects\nuc_config.o --omf_browse .\objects\nuc_config.crf --depend .\objects\nuc_config.d)
-I (NUC_config.h)(0x5BD38BAA)
+F (.\NUC_config.c)(0x5BD38D45)(-c --cpu Cortex-M0 -D__EVAL -g -O0 --apcs=interwork --split_sections -I..\Nuvoton\NUC140BSP\CMSIS\CM0\CoreSupport -I..\Nuvoton\NUC140BSP\CMSIS\CM0\DeviceSupport\Nuvoton\NUC1xx -I..\Nuvoton\NUC140BSP\NuvotonPlatform_Keil\Include -I..\Nuvoton\NUC140BSP\NuvotonPlatform_Keil\Include\Driver -I..\Nuvoton\NUC140BSP\NuvotonPlatform_Keil\Include\NUC1xx-LB_002 -I.\ -I..\Source_Code-I "E:\Online_Project\Lap Trinh Nhung Can Ban\Code_Resposity\DoAn_LTN\Source_Code\RTE"-I C:\Keil_v5\ARM\PACK\Nuvoton\NuMicro_DFP\1.3.2\Device\NUC100\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="517" -DUSE_STDPERIPH_DRIVER-o .\objects\nuc_config.o --omf_browse .\objects\nuc_config.crf --depend .\objects\nuc_config.d)
+I (NUC_config.h)(0x5BD38D45)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x55DB3986)
 I (..\Nuvoton\NUC140BSP\CMSIS\CM0\DeviceSupport\Nuvoton\NUC1xx\NUC1xx.h)(0x4F61A4A4)
 I (..\Nuvoton\NUC140BSP\CMSIS\CM0\CoreSupport\core_cm0.h)(0x51061B80)
@@ -33,7 +33,7 @@ I (..\Nuvoton\NUC140BSP\NuvotonPlatform_Keil\Include\System\ModuleID.h)(0x5BCE91
 I (..\Nuvoton\NUC140BSP\NuvotonPlatform_Keil\Include\Driver\DrvUART.h)(0x5BCE9162)
 I (..\Nuvoton\NUC140BSP\NuvotonPlatform_Keil\Include\Driver\DrvGPIO.h)(0x5BCE9162)
 I (..\Nuvoton\NUC140BSP\NuvotonPlatform_Keil\Include\Driver\DrvSYS.h)(0x5BCE9162)
-F (.\NUC_config.h)(0x5BD38BAA)()
+F (.\NUC_config.h)(0x5BD38D45)()
 F (..\Nuvoton\NUC140BSP\NuvotonPlatform_Keil\Src\Driver\DrvGPIO.c)(0x5BCE9162)(-c --cpu Cortex-M0 -D__EVAL -g -O0 --apcs=interwork --split_sections -I..\Nuvoton\NUC140BSP\CMSIS\CM0\CoreSupport -I..\Nuvoton\NUC140BSP\CMSIS\CM0\DeviceSupport\Nuvoton\NUC1xx -I..\Nuvoton\NUC140BSP\NuvotonPlatform_Keil\Include -I..\Nuvoton\NUC140BSP\NuvotonPlatform_Keil\Include\Driver -I..\Nuvoton\NUC140BSP\NuvotonPlatform_Keil\Include\NUC1xx-LB_002 -I.\ -I..\Source_Code-I "E:\Online_Project\Lap Trinh Nhung Can Ban\Code_Resposity\DoAn_LTN\Source_Code\RTE"-I C:\Keil_v5\ARM\PACK\Nuvoton\NuMicro_DFP\1.3.2\Device\NUC100\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="517" -DUSE_STDPERIPH_DRIVER-o .\objects\drvgpio.o --omf_browse .\objects\drvgpio.crf --depend .\objects\drvgpio.d)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x55DB3986)
 I (..\Nuvoton\NUC140BSP\CMSIS\CM0\DeviceSupport\Nuvoton\NUC1xx\NUC1xx.h)(0x4F61A4A4)
