@@ -299,54 +299,78 @@ function PlaceShip (key){
   // get previous position
   let X = parseInt(selectedPoint%10);
   let Y = parseInt(selectedPoint/10);
-  let PreviousID = '#'+selectedPoint+'-1';
-  let flag = true;
 
-  // remove old selected rectangle
-  $(PreviousID).removeClass('place-ship');
-  $(PreviousID).removeClass('selected');
   switch (key){
     // up
     case command.UP:
       if (Y != 1)
         Y -= 1;
+      else return;
       break;
 
     //left  
     case command.LEFT:
       if (X  != 1)
         X -= 1;
+      else return;
       break;
 
     //right  
     case command.RIGHT:
-      if (X  <  (BOARD_SIZE + 1 - shipLength))
+      if (X  < BOARD_SIZE)
         X += 1;
+      else return;
       break;
 
     //down
     case command.DOWN:
-      if (Y  != 9)
+      if (Y  < BOARD_SIZE)
         Y += 1;
+      else return;
       break;
 
     //OK
     case command.OK:
-      if (CheckPlacement(command.RIGHT) || CheckPlacement(command.LEFT) || CheckPlacement(command.DOWN) || CheckPlacement(command.UP))
+      if (CheckPlacement(command.RIGHT) || CheckPlacement(command.LEFT) 
+          || CheckPlacement(command.DOWN) || CheckPlacement(command.UP)) {
         state = states.ROTATE;
+        return;
+      }
       break;
     default:
       break;
   }
   // store value back to selectedPoint
+  oldSelectedPoint = selectedPoint;
   selectedPoint = Y * 10 + X;
+  let PreviousID = '#'+oldSelectedPoint+'-1';
   let CurrentID = '#'+selectedPoint+'-1';
 
-  $(CurrentID).addClass('selected');
-
-  if (CheckPlacement(command.RIGHT)){
+  if (CheckPlacement(direction)){
+    $(CurrentID).addClass('selected');
     $(CurrentID).addClass('place-ship');
+    switch (direction){
+      case command.UP:
+        $(CurrentID).addClass('vertical up');
+        break;
+      case command.LEFT:
+        $(CurrentID).addClass('left');
+        break;
+      case command.DOWN:
+        $(CurrentID).addClass('vertical');
+        break;
+      default:
+        break;
+    }
+    // remove old selected rectangle
+    $(PreviousID).not('.ship').removeClass('vertical up left'); 
+    $(PreviousID).removeClass('place-ship');
+    $(PreviousID).removeClass('selected');
+  } else {
+    selectedPoint = oldSelectedPoint;
   }
+
+  
 }
 
 function Rotate (key){
@@ -378,7 +402,6 @@ function Rotate (key){
       case command.RIGHT:
         if (CheckPlacement(command.RIGHT)){
           $(CurrentID).removeClass('vertical up left');
-          $(CurrentID).addClass('place-ship');
           $(CurrentID).addClass('place-ship');
           direction = command.RIGHT;            
         }
@@ -454,8 +477,8 @@ function Rotate (key){
 
       // Cancle
       case command.CANCLE:
-        $(CurrentID).removeClass('vertical up left');
-        direction = command.RIGHT;
+        //$(CurrentID).removeClass('vertical up left');
+        //direction = command.RIGHT;
         state = states.PLACESHIP;
         break;
       default:
