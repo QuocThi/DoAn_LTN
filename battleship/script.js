@@ -18,12 +18,26 @@ var state = null;
 var selectedPoint = null;
 var shipLength = null;
 var direction = null;
+var opponent_done = false;
 
+// handle socket event
 // var socket = io("18.136.212.75:3000");
 
-// socket.on("Server-send-data" ,function(data){
-//   $("#receivedata").append(data + ", ");
-//});
+// socket event move
+
+// socket event emit Client_PlaceShip_Done
+
+// socket event on Server_Opponent_Done
+
+// socket event emit Client_Shot
+
+// socket event on Server_WereShot
+
+// socket event emit Client_Shot_Result
+
+// socket event on Server_Shot
+
+// socket event
 
 $(function() {
 
@@ -240,11 +254,6 @@ function storeShips(player) {
       }
     }
   }
-  $('#player' + player + '-board > div').removeClass();
-  if (player == 1)
-    $('#left .ship').removeClass();
-  else
-    $('#right .ship').removeClass();
 }
 
 
@@ -291,6 +300,10 @@ function Process(key ){
       break;
     case states.READY:
       if (key == command.OK);
+        storeShips(1)
+        console.log('status : ready')
+        if (!opponent_done)
+          $('#waiting').removeClass('hidden')
         // Do press button
     case states.PLAYERTURN:
     case states.OPPONENTTURN:
@@ -470,7 +483,8 @@ function Rotate (key){
 
         // Check if all the ship have been placed
         if ((index ) === ships.length) {
-          $('button#1').removeClass('hidden');
+          $('#Ready_button').removeClass('hidden');
+          $('#Ready_button').addClass('selected')
           // end shipplacement
           $(CurrentID).removeClass('selected');
           state = states.READY;
