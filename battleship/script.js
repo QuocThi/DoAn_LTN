@@ -19,6 +19,12 @@ var selectedPoint = null;
 var shipLength = null;
 var direction = null;
 
+// var socket = io("18.136.212.75:3000");
+
+// socket.on("Server-send-data" ,function(data){
+//   $("#receivedata").append(data + ", ");
+//});
+
 $(function() {
 
   for (var i = 0; i < player1array.length; i++) {
@@ -346,8 +352,8 @@ function PlaceShip (key){
   let PreviousID = '#'+oldSelectedPoint+'-1';
   let CurrentID = '#'+selectedPoint+'-1';
 
+  $(CurrentID).addClass('selected');
   if (CheckPlacement(direction)){
-    $(CurrentID).addClass('selected');
     $(CurrentID).addClass('place-ship');
     switch (direction){
       case command.UP:
@@ -362,13 +368,13 @@ function PlaceShip (key){
       default:
         break;
     }
-    // remove old selected rectangle
-    $(PreviousID).not('.ship').removeClass('vertical up left'); 
-    $(PreviousID).removeClass('place-ship');
-    $(PreviousID).removeClass('selected');
   } else {
-    selectedPoint = oldSelectedPoint;
+    //selectedPoint = oldSelectedPoint;
   }
+  // remove old selected rectangle
+  $(PreviousID).not('.ship').removeClass('vertical up left'); 
+  $(PreviousID).removeClass('place-ship');
+  $(PreviousID).removeClass('selected');
 
   
 }
